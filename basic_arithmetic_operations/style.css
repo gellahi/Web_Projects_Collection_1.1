@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    transition: background 0.5s ease;
+}
+
+.containerFluid {
+    height: 100vh;
+    background: url(bg_image.jfif) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    left: 450px;
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 4px #d1d9e6, -2px -2px 4px #ffffff;
+    max-width: 500px;
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    box-shadow: 2px 2px 1px rgb(58, 58, 58);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    background: rgb(24, 24, 24);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 7px 7px 14px #d1d9e6, -7px -7px 14px #ffffff;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+
+input[type="number"] {
+    font-size: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-row select {
+    font-size: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.result {
+    margin-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project Management Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside>
+    <div class="nav-brand" id="navBrand">Pro Manage</div>
+    <nav class="nav-menu">
+      <a id="boardLink" class="active">Board</a>
+      <a id="analyticsLink">Analytics</a>
+      <a id="settingsLink">Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <header id="mainHeader">
+      <div class="header-left">
+        <h2 id="headerTitle">Board</h2>
+        <select id="timeRange">
+          <option value="this-week">This week</option>
+          <option value="next-week">Next week</option>
+          <option value="this-month">This month</option>
+        </select>
+      </div>
+      <div class="header-right">
+        <input type="text" id="searchProject" placeholder="Search by title..." />
+        <select id="filterStatus" class="filter-select">
+          <option value="All">All</option>
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <button class="theme-toggle-btn" id="themeToggle">Dark Mode</button>
+        <button class="add-btn" id="addProjectBtn">+ Add Project</button>
+      </div>
+    </header>
+
+    <div class="content-container">
+      <section id="boardSection" class="active">
+        <div class="board-container" id="boardContainer">
+        </div>
+      </section>
+
+      <section id="analyticsSection">
+        <div class="analytics-container">
+          <h2>Analytics</h2>
+          <div class="stats">
+            <p>Total tasks: <span id="totalTasks">0</span></p>
+            <p>Pending: <span id="pendingTasks">0</span></p>
+            <p>In Progress: <span id="inProgressTasks">0</span></p>
+            <p>Completed: <span id="completedTasks">0</span></p>
+          </div>
+          <div class="bar-chart">
+            <div class="bar" id="pendingBar"><span id="pendingBarText"></span></div>
+            <div class="bar" id="inProgressBar"><span id="inProgressBarText"></span></div>
+            <div class="bar" id="completedBar"><span id="completedBarText"></span></div>
+          </div>
+        </div>
+      </section>
+      <section id="settingsSection">
+        <div class="settings-container">
+          <h2>Settings</h2>
+          <form class="settings-form">
+            <label for="brandName">Brand Name:</label>
+            <input type="text" id="brandName" placeholder="Enter new brand name..." />
+            <div class="settings-buttons">
+              <button type="button" class="save-brand-btn" id="saveBrandBtn">Save Brand</button>
+              <button type="button" class="clear-tasks-btn" id="clearTasksBtn">Clear All Tasks</button>
+              <button type="button" class="reset-data-btn" id="resetDataBtn">Reset All Data</button>
+            </div>
+          </form>
+          <p>Note: “Reset All Data” clears tasks, theme preference, brand name, and reverts everything to default.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <h2 id="modalTitle">Add New Project</h2>
+      <form id="projectForm">
+        <input type="hidden" id="editIndex" value="" />
+        <input type="text" id="projectTitle" placeholder="Project Title" required />
+        <textarea id="projectDescription" rows="3" placeholder="Project Description" required></textarea>
+        <select id="projectStatus">
+          <option value="Pending">Pending</option>
+          <option value="In Progress">In Progress</option>
+          <option value="Completed">Completed</option>
+        </select>
+        <div class="modal-actions">
+          <button type="submit" class="save-btn">Save</button>
+          <button type="button" class="cancel-btn" id="cancelModalBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
